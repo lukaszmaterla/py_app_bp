@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    About US
+{% endblock %}
+
+{% block content %}
+    {{ user }}
+    {{ request.user }}
+    {{ request.path }}
+    {{ user.is_authenticated }}
+{% if user.is_authenticated %}
+<h1>User only data</h1>
+{% endif %}
+{% endblock %}
