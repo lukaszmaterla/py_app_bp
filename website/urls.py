@@ -18,12 +18,14 @@ from django.urls import path
 from .views import (
     home_page,
     contact,
-    about
+    about,
+    example_page
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page),
     path('about/', about),
-    path('contact/', contact)
+    path('contact/', contact),
+    path('example/', example_page)
 ]
