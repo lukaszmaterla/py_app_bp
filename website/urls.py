@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page),
     path('about/', about),
-    path('blog/<str:slug>', blog_post_detail_page),
+    path('blog/<str:slug>/', blog_post_detail_page),
     path('contact/', contact),
     path('example/', example_page)
 ]
