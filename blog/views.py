@@ -3,7 +3,7 @@ from django.http import Http404
 from .models import BlogPost
 
 
-def blog_post_detail_page(request, slug):
+def blog_post_detail_view(request, slug):
     # queryset = BlogPost.objects.filter(slug=slug)
     # if queryset.count() == 0:
     #     raise Http404
