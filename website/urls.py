@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import blog_post_detail_page
+from blog.views import (
+    blog_post_detail_page,
+    blog_post_list_view,
+)
 from .views import (
     home_page,
     contact,
@@ -27,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page),
     path('about/', about),
+    path('blog/', blog_post_list_view),
     path('blog/<str:slug>/', blog_post_detail_page),
     path('contact/', contact),
     path('example/', example_page)
