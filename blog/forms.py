@@ -9,6 +9,7 @@ class BlogPostForm(forms.Form):
 
 
 class BlogPostModelForm(forms.ModelForm):
+    # title = forms.DateField // this is one of the way to change type of filed model
     class Meta:
         model = BlogPost
         fields = ['title', 'slug', 'content']
