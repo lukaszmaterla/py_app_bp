@@ -31,6 +31,7 @@ def blog_post_create_view(request):
     if form.is_valid():
         obj = form.save(commit=False)
         obj.title = form.cleaned_data.get('title') + '-this is awesome'
+        obj.user = request.user
         form.save()
         form = BlogPostModelForm()
 
