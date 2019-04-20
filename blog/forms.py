@@ -9,7 +9,15 @@ class BlogPostForm(forms.Form):
 
 
 class BlogPostModelForm(forms.ModelForm):
-    # title = forms.DateField // this is one of the way to change type of filed model
+    # title = forms.DateField()
+    # this is one of the way to change type of filed model
     class Meta:
         model = BlogPost
         fields = ['title', 'slug', 'content']
+
+    def clean_title(self, *args, **kwargs):
+        title = self.cleaned_data.get('title')
+        qs = BlogPost.objects.filter(title=title)
+        if qs.exists():
+            raise forms.ValidationError('Title already exists')
+        return title
