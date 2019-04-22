@@ -5,5 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Delete view blog post</h1>
+    <h1>Are you sure you want to delete the following: ?</h1>
+    <p>{{ obj.title }}</p>
+<form action="" method="Post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Yes, delete</button>
+</form>
 {% endblock %}
