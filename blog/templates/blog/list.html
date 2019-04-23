@@ -7,7 +7,7 @@
 {% block content %}
 <div class="row">
     {% for object in object_list %}
-        {% include 'blog/list-inline.html' with blog_post=object truncate=True %}
+        {% include 'blog/list-inline.html' with blog_post=object truncate=True detail=False %}
     {% endfor %}
 </div>
 {% endblock %}
