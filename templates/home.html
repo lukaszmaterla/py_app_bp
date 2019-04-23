@@ -5,11 +5,14 @@
 {% endblock %}
 
 {% block content %}
+<h1>{{ title }}</h1>
     {{ user }}
     {{ request.user }}
     {{ request.path }}
     {{ user.is_authenticated }}
 {% if user.is_authenticated %}
-<h1>User only data</h1>
+    {% for a in blog_list %}
+        {% include 'blog/list-inline.html' with blog_post=a %}
+    {% endfor %}
 {% endif %}
 {% endblock %}
