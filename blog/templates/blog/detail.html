@@ -10,10 +10,10 @@ About US
 
     {% if request.user.is_authenticated %}
     {% if request.user.is_staff %}
-        <div class="col-12">
-            <a href="{{ obj.get_edit_url }}">Edit</a>
-            <a href="{{ obj.get_delete_url }}">Delete</a>
-        </div>
+    <div class="col-12">
+        <a href="{{ obj.get_edit_url }}">Edit</a>
+        <a href="{{ obj.get_delete_url }}">Delete</a>
+    </div>
     {% endif %}
     {% endif %}
 </div>
