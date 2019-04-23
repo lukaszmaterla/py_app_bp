@@ -16,7 +16,7 @@ class BlogPost(models.Model):
         return f"/blog/{self.slug}/"
 
     def get_edit_url(self):
-        return f"{self.get_absolute_url}/edit"
+        return f"{self.get_absolute_url}/edit/"
 
     def get_delete_url(self):
         return f"{self.get_absolute_url}/delete"
