@@ -10,7 +10,7 @@ def home_page(request):
     qs = BlogPost.objects.all()[:5]
     context = {
         "title": my_title,
-        "my_blog_list": qs
+        "blog_list": qs
     }
     return render(request, 'home.html', context)
 
