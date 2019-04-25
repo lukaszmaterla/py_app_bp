@@ -35,7 +35,7 @@ class BlogPost(models.Model):
         ordering = ['-publish_date', '-update', '-timestamp']
 
     def get_absolute_url(self):
-        return f"/blog/{self.slug}/"
+        return f"/blog/{self.slug}"
 
     def get_edit_url(self):
         return f"{self.get_absolute_url()}/edit/"
