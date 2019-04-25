@@ -13,4 +13,3 @@ urlpatterns = [
     path('<str:slug>/edit/', blog_post_update_view),
     path('<str:slug>/delete/', blog_post_delete_view),
 ]
-

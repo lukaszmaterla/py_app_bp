@@ -18,7 +18,10 @@ def blog_post_detail_view(request, slug):
 
 
 def blog_post_list_view(request):
-    obj = BlogPost.objects.published()
+    obj = BlogPost.objects.all().published()
+    if request.user.is_authenticated:
+        my_qs = BlogPost.objects.filter(user=request.user)
+        obj = (obj | my_qs).distinct()
     template_name = 'blog/list.html'
     context = {'object_list': obj}
     return render(request, template_name, context)
