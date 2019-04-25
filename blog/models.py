@@ -23,6 +23,7 @@ class BlogPostManager(models.Manager):
 class BlogPost(models.Model):
     # get blog post for user query: blogpost_set() or BlogPost.objects.filter(user__id=id)
     user = models.ForeignKey(User, default=1, null=True, on_delete=models.SET_NULL)
+    image = models.FileField(upload_to='image/', blank=True, null=True)
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)  # hello word -> hello-word
     content = models.TextField(null=True, blank=True)
