@@ -1,7 +1,14 @@
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
 
 User = settings.AUTH_USER_MODEL
+
+
+class BlogPostManager(models.Manager):
+    def published(self):
+        now = timezone.now()
+        return self.get__queryset().filter(publish_date__lte=now)
 
 
 # Create your models here.
@@ -14,6 +21,7 @@ class BlogPost(models.Model):
     publish_date = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
+    objects = BlogPostManager()
 
     class Meta:
         ordering = ['-publish_date', '-update', '-timestamp']

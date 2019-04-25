@@ -18,7 +18,7 @@ def blog_post_detail_view(request, slug):
 
 
 def blog_post_list_view(request):
-    obj = BlogPost.objects.all()
+    obj = BlogPost.objects.published()
     template_name = 'blog/list.html'
     context = {'object_list': obj}
     return render(request, template_name, context)
