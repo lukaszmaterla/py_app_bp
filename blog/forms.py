@@ -13,7 +13,7 @@ class BlogPostModelForm(forms.ModelForm):
     # this is one of the way to change type of filed model
     class Meta:
         model = BlogPost
-        fields = ['title', 'slug', 'content', 'publish_date']
+        fields = ['title', 'slug', 'content', 'publish_date', 'image']
 
     def clean_title(self, *args, **kwargs):
         instance = self.instance
