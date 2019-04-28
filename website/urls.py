@@ -19,6 +19,9 @@ from django.urls import path, include
 from blog.views import (
     blog_post_create_view,
 )
+from searches.views import (
+    search_view,
+)
 from .views import (
     home_page,
     contact,
@@ -26,9 +29,11 @@ from .views import (
     example_page
 )
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page),
+    path('search/', search_view),
     path('about/', about),
     path('blog/', include('blog.urls')),
     path('blog-new/', blog_post_create_view),
